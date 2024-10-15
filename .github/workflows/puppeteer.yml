@@ -16,7 +16,6 @@ jobs:
         run: node script/main.mjs
 
       - name: Archive output
-        if: success() 
         uses: actions/upload-artifact@v4
         with:
           name: output-artifacts
