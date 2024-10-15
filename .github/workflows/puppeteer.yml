@@ -9,15 +9,15 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
       - name: Install dependencies
         run: npm install
       - name: Run the script
         run: node script/main.mjs
 
       - name: Archive output
-        if: success()  # Only archive if the previous steps succeeded
-        uses: actions/upload-artifact@v4
+        if: success() 
+        uses: actions/upload-artifact@v3
         with:
           name: output-artifacts
-          path: auto_*  
+          path: auto_* 
