@@ -1,7 +1,10 @@
 name: Puppeteer and lighthouse
 
 on:
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["Deploy Next.js site to Pages"]  # Change to the name of the workflow you want to depend on
+    types:
+      - completed
 
 jobs:
   build:
